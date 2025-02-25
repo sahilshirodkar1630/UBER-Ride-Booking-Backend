@@ -1,10 +1,7 @@
 package com.sahil.project.uber.uberApp.dto;
 
-import com.sahil.project.uber.uberApp.entities.Driver;
-import com.sahil.project.uber.uberApp.entities.Rider;
 import com.sahil.project.uber.uberApp.entities.enums.PaymentMethod;
 import com.sahil.project.uber.uberApp.entities.enums.RideStatus;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +21,7 @@ public class RideDto{
     private DriverDto driver;
     private PaymentMethod paymentMethod;
     private RideStatus rideStatus;
+    private String otp;
     private Double fare;
     private LocalDateTime startedAt;
     private LocalDateTime endedAt;

@@ -17,10 +17,11 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class RideRequestDto {
     private long id;
-    private Point pickupLocation;
-    private Point dropLocation;
+    private PointDto pickupLocation;
+    private PointDto dropLocation;
     private LocalDateTime requestedTime;
     private Rider rider;
     private PaymentMethod paymentMethod;
     private RideRequestStatus rideRequestStatus;
+    private Double fare;
 }
