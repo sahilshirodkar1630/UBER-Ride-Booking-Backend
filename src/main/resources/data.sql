@@ -35,3 +35,6 @@ available, current_location) VALUES
 (3, 7, 4.8, false, ST_GeomFromText('POINT(77.1050 28.6950)', 4326)),
 (4, 9, 4.6, true, ST_GeomFromText('POINT(77.1150 28.7050)', 4326));
 
+INSERT INTO wallet(id,user_id,balance) VALUES
+(1,1,100),
+(2,4,500);
