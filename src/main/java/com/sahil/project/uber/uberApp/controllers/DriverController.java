@@ -1,11 +1,12 @@
 package com.sahil.project.uber.uberApp.controllers;
 
-import com.sahil.project.uber.uberApp.dto.RideDto;
-import com.sahil.project.uber.uberApp.dto.RideStartDto;
+import com.sahil.project.uber.uberApp.dto.*;
 import com.sahil.project.uber.uberApp.services.DriverService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -35,4 +36,22 @@ public class DriverController {
     public ResponseEntity<RideDto> endRide(@PathVariable Long rideId){
         return ResponseEntity.ok(driverService.endRide(rideId));
     }
+
+    @PostMapping("/rateDriver")
+    public ResponseEntity<RiderDto> rateDriver(@RequestBody RatingDto rateDto){
+        return ResponseEntity.ok(driverService.rateRider(rateDto.getRideId(),rateDto.getRating()));
+    }
+    @GetMapping("/getMyProfile")
+    public ResponseEntity<DriverDto> getMyProfile(){
+        return ResponseEntity.ok(driverService.getMyProfile());
+    }
+
+    @GetMapping("/getMyRides")
+    public ResponseEntity<Page<RideDto>> getMyRides(@RequestParam(defaultValue = "0") Integer pageOffset,
+                                                    @RequestParam(defaultValue = "10",required = false) Integer pageSize){
+        PageRequest pageRequest = PageRequest.of(pageOffset,pageSize,
+                Sort.by(Sort.Direction.DESC,"createdTime","id"));
+        return ResponseEntity.ok(driverService.getAllMyRides(pageRequest));
+    }
+
 }

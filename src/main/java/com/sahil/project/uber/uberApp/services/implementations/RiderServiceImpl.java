@@ -63,11 +63,11 @@ public class RiderServiceImpl implements RiderService {
         Rider rider = getCurrentRider();
         Ride ride = rideService.getRideById(rideId);
         if(!rider.equals(ride.getRider())){
-            throw new RuntimeException("Driver cannot cancel a ride as he has not accepted it earlier");
+            throw new RuntimeException("Rider cannot cancel a ride as he has not accepted it earlier");
         }
 
         if(!ride.getRideStatus().equals(RideStatus.CONFIRMED)){
-            throw new RuntimeException("Driver cannot be cancelled, invalid status: "+ride.getRideStatus());
+            throw new RuntimeException("Rider cannot be cancelled, invalid status: "+ride.getRideStatus());
         }
 
         Ride savedRide = rideService.updateRideStatus(ride,RideStatus.CANCELLED);

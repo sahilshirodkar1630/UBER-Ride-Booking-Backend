@@ -8,6 +8,6 @@ import com.sahil.project.uber.uberApp.entities.Driver;
 public interface AuthService{
     String login(String email,String password);
     UserDto signup(SignupDto signupDto);
-    DriverDto onboardNewDriver(String userId);
+    DriverDto onboardNewDriver(Long userId,String vehicleId);
 
 }

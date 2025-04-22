@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Builder
+
 public class WalletTransaction{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
