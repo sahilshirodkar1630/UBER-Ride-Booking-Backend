@@ -25,16 +25,16 @@ INSERT INTO user_roles (user_id, roles) VALUES
 (9, 'DRIVER'),
 (10, 'RIDER');
 
-insert into rider (id,user_id,rating) values
-(1,1,4.9);
+insert into rider (user_id,rating) values
+(1,4.9);
 
-INSERT INTO driver (id, user_id, rating,
+INSERT INTO driver (user_id, rating,
 available, current_location) VALUES
-(1, 2, 4.7, true, ST_GeomFromText('POINT(77.1100 28.7000)', 4326)),
-(2, 4, 4.5, true, ST_GeomFromText('POINT(77.1200 28.7100)', 4326)),
-(3, 7, 4.8, false, ST_GeomFromText('POINT(77.1050 28.6950)', 4326)),
-(4, 9, 4.6, true, ST_GeomFromText('POINT(77.1150 28.7050)', 4326));
+(2, 4.7, true, ST_GeomFromText('POINT(77.1100 28.7000)', 4326)),
+(4, 4.5, true, ST_GeomFromText('POINT(77.1200 28.7100)', 4326)),
+(7, 4.8, false, ST_GeomFromText('POINT(77.1050 28.6950)', 4326)),
+(9, 4.6, true, ST_GeomFromText('POINT(77.1150 28.7050)', 4326));
 
-INSERT INTO wallet(id,user_id,balance) VALUES
-(1,1,100),
-(2,4,500);
+INSERT INTO wallet(user_id,balance) VALUES
+(1,100),
+(4,500);
