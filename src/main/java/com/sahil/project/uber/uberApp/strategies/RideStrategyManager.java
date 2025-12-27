@@ -14,6 +14,7 @@ import java.time.LocalTime;
 public class RideStrategyManager {
     private final DriverMatchingHighestRatedDriverStrategy highestRatedDriverStrategy;
     private final DriverMatchingNearestDriverStrategy nearestDriverStrategy;
+
     private final RideFareSurgePricingFareCalculationStrategy surgePricingFareCalculationStrategy;
     private final RideFareDefaultFareCalculationStrategy defaultFareCalculationStrategy;
     public DriverMatchingStrategy driverMatchingStrategy(double riderRating){

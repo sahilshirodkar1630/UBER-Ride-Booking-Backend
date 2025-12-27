@@ -1,6 +1,7 @@
 package com.sahil.project.uber.uberApp.services;
 
 import com.sahil.project.uber.uberApp.dto.DriverDto;
+import com.sahil.project.uber.uberApp.dto.LoginResponseDto;
 import com.sahil.project.uber.uberApp.dto.SignupDto;
 import com.sahil.project.uber.uberApp.dto.UserDto;
 import com.sahil.project.uber.uberApp.entities.Driver;
@@ -10,4 +11,5 @@ public interface AuthService{
     UserDto signup(SignupDto signupDto);
     DriverDto onboardNewDriver(Long userId,String vehicleId);
 
+    String refreshToken(String refreshToken);
 }

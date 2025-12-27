@@ -15,7 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
 @RequiredArgsConstructor
-public class WebSecurityConfig {
+public class  WebSecurityConfig {
 
     private final JWTAuthFilter jwtAuthFilter;
     private static final String[] PUBLIC_ROUTES = {"/auth/**"};
