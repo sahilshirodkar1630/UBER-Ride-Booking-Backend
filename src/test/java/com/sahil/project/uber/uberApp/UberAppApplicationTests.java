@@ -18,8 +18,6 @@ class UberAppApplicationTests {
 				"This is the Testing Email",
 				"Body of my email sahil"
 		);
-
-
 	}
 
 	@Test
